@@ -48,10 +48,10 @@
 </style>
    
 
-<div data-section-id="{{ section.id }}" data-section-type="header-section">
+{% comment %} <div data-section-id="{{ section.id }}" data-section-type="header-section">
   <div class="header-bar">
     <div class="wrapper medium-down--hide">
-      <div class="post-large--display-table">
+      <div class="post-large--display-table"> {% endcomment %}
 
         <!-- {% if section.settings.show_announcement or section.settings.header_search_enable %}
           <div class="header-bar__left post-large--display-table-cell">
@@ -86,7 +86,7 @@
         {% endif %} -->
 
        
-
+{% comment %} 
         <div class="header-bar__right post-large--display-table-cell">
 
           {% if shop.customer_accounts_enabled %}
@@ -110,151 +110,15 @@
             </ul>
           {% endif %}
 
-          <div class="header-bar__module">
-            <span class="header-bar__sep" aria-hidden="true"></span>
-            <a href="{{ routes.cart_url }}" class="cart-page-link">
-              <span class="icon icon-cart header-bar__cart-icon" aria-hidden="true"></span>
-            </a>
-          </div>
+          
 
-          <div class="header-bar__module">
-            <a href="{{ routes.cart_url }}" class="cart-page-link">
-              {{ 'layout.cart.title' | t }}{% unless cart.item_count == 0 %}:{% endunless %}
-              <span class="cart-count header-bar__cart-count{% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}</span>
-            </a>
-          </div>
-
-          {% if section.settings.header_search_enable %}
-            {% if section.settings.show_announcement %}
-              <div class="header-bar__module header-bar__search">
-                {% include 'search-bar' with 'header' %}
-              </div>
-            {% endif %}
-          {% endif %}
-
-        </div>
-      </div>
+        </div> {% endcomment %}
+      {% comment %} </div>
     </div>
 
-    <!-- <div class="wrapper post-large--hide announcement-bar--mobile">
-      {% if section.settings.show_announcement %}
-        {% if section.settings.announcement_link != blank %}
-          <a href="{{ section.settings.announcement_link }}">
-        {% endif %}
-          <span>{{ section.settings.header_text | escape }}</span>
-        {% if section.settings.announcement_link != blank %}
-          </a>
-        {% endif %}
-      {% endif %}
-    </div> -->
 
-    <!-- <div class="wrapper post-large--hide">
-      {% unless section.settings.nav_menu == blank and section.settings.header_search_enable == false and shop.customer_accounts_enabled == false %}
-        <button type="button" class="mobile-nav-trigger" id="MobileNavTrigger" aria-controls="MobileNav" aria-expanded="false">
-          <span class="icon icon-hamburger" aria-hidden="true"></span>
-          {{ 'layout.navigation.menu' | t }}
-        </button>
-      {% endunless %}
-      <a href="{{ routes.cart_url }}" class="cart-page-link mobile-cart-page-link">
-        <span class="icon icon-cart header-bar__cart-icon" aria-hidden="true"></span>
-        {{ 'layout.cart.title' | t }} <span class="cart-count{% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}</span>
-      </a>
-    </div>
-    {% include 'mobile-nav' with linklists[section.settings.nav_menu] %}
-  </div> -->
-
-  <header class="site-header" role="banner">
-    <div class="wrapper">
-
-      {% if section.settings.nav_below_logo %}
-        <div class="grid--full">
-          <div class="grid__item">
-            {% if request.page_type == 'index' %}
-              <h1 class="site-header__logo{% if section.settings.logo == blank %}{% unless section.settings.left_aligned_logo == false and section.settings.nav_below_logo %} post-large--left{% endunless %}{% endif %}" itemscope itemtype="http://schema.org/Organization">
-            {% else %}
-              <div class="h1 site-header__logo{% if section.settings.logo == blank %}{% unless section.settings.left_aligned_logo == false and section.settings.nav_below_logo %} post-large--left{% endunless %}{% endif %}" itemscope itemtype="http://schema.org/Organization">
-            {% endif %}
-              {% if section.settings.logo != blank %}
-                <noscript>
-                  {% capture image_size %}{{ logo_width | escape }}x{% endcapture %}
-                  <div class="logo__image-wrapper">
-                    {{ section.settings.logo | img_url: image_size | img_tag: shop.name }}
-                  </div>
-                </noscript>
-                <div class="logo__image-wrapper supports-js">
-                  <a href="{{ routes.root_url }}" itemprop="url" style="padding-top:{{ 1 | divided_by: section.settings.logo.aspect_ratio | times: 100}}%;">
-                    {% assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
-                    <img class="logo__image lazyload"
-                         src="{{ section.settings.logo | img_url: '300x300' }}"
-                         data-src="{{ img_url }}"
-                         data-widths="[120, 180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
-                         data-aspectratio="{{ section.settings.logo.aspect_ratio }}"
-                         data-sizes="auto"
-                         alt="{{ shop.name | escape }}"
-                         itemprop="logo">
-                  </a>
-                </div>
-              {% else %}
-                <a href="{{ routes.root_url }}" itemprop="url">{{ shop.name }}</a>
-              {% endif %}
-            {% if request.page_type == 'index' %}
-              </h1>
-            {% else %}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-        <div class="grid--full medium-down--hide">
-          <div class="grid__item">
-            {% include 'site-nav' with linklists[section.settings.nav_menu] %}
-          </div>
-        </div>
-      {% else %}
-        <div class="grid--full post-large--display-table">
-          <div class="grid__item post-large--one-third post-large--display-table-cell">
-            {% if request.page_type == 'index' %}
-              <h1 class="site-header__logo{% if section.settings.logo == blank %}{% unless section.settings.left_aligned_logo == false and section.settings.nav_below_logo %} post-large--left{% endunless %}{% endif %}" itemscope itemtype="http://schema.org/Organization">
-            {% else %}
-              <div class="h1 site-header__logo{% if section.settings.logo == blank %}{% unless section.settings.left_aligned_logo == false and section.settings.nav_below_logo %} post-large--left{% endunless %}{% endif %}" itemscope itemtype="http://schema.org/Organization">
-            {% endif %}
-              {% if section.settings.logo != blank %}
-                <noscript>
-                  {% capture image_size %}{{ logo_width | escape }}x{% endcapture %}
-                  <div class="logo__image-wrapper">
-                    {{ section.settings.logo | img_url: image_size | img_tag: shop.name }}
-                  </div>
-                </noscript>
-                <div class="logo__image-wrapper supports-js">
-                  <a href="{{ routes.root_url }}" itemprop="url" style="padding-top:{{ 1 | divided_by: section.settings.logo.aspect_ratio | times: 100}}%;">
-                    {% assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
-                    <img class="logo__image lazyload"
-                         src="{{ section.settings.logo | img_url: '300x300' }}"
-                         data-src="{{ img_url }}"
-                         data-widths="[120, 180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
-                         data-aspectratio="{{ section.settings.logo.aspect_ratio }}"
-                         data-sizes="auto"
-                         alt="{{ shop.name | escape }}"
-                         itemprop="logo">
-                  </a>
-                </div>
-              {% else %}
-                <a href="{{ routes.root_url }}" itemprop="url">{{ shop.name }}</a>
-              {% endif %}
-            {% if request.page_type == 'index' %}
-              </h1>
-            {% else %}
-              </div>
-            {% endif %}
-          </div>
-          <div class="grid__item post-large--two-thirds post-large--display-table-cell medium-down--hide">
-            {% include 'site-nav' with linklists[section.settings.nav_menu] %}
-          </div>
-        </div>
-      {% endif %}
-
-    </div>
-  </header>
-</div>
+ 
+</div> {% endcomment %}
 
 
 {% schema %}
