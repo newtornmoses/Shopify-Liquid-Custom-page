@@ -1,0 +1,87 @@
+<div class="header_top__Social__icons">
+  <ul class="list list-social" role="list">
+    {%- if settings.social_twitter_link != blank -%}
+    <!-- <li class="list-social__item"> -->
+    <a href="{{ settings.social_twitter_link }}" class="list-social__link link">
+      {%- render 'icon-twitter' -%}
+      <span class="visually-hidden">{{
+        "general.social.links.twitter" | t
+      }}</span>
+    </a>
+    <!-- </li> -->
+    {%- endif -%} {%- if settings.social_facebook_link != blank -%}
+    <li class="list-social__item">
+      <a
+        href="{{ settings.social_facebook_link }}"
+        class="list-social__link link"
+      >
+        {%- render 'icon-facebook' -%}
+        <span class="visually-hidden">{{
+          "general.social.links.facebook" | t
+        }}</span>
+      </a>
+    </li>
+    {%- endif -%} {%- if settings.social_pinterest_link != blank -%}
+    <li class="list-social__item">
+      <a
+        href="{{ settings.social_pinterest_link }}"
+        class="list-social__link link"
+      >
+        {%- render 'icon-pinterest' -%}
+        <span class="visually-hidden">{{
+          "general.social.links.pinterest" | t
+        }}</span>
+      </a>
+    </li>
+    {%- endif -%}
+  </ul>
+
+  <div class="otherMenus flex space-x-4">
+    <p class="text-[14px] text-white">Contact</p>
+    <p class="text-[14px] text-white">About</p>
+  </div>
+</div>
+
+<style>
+  .header_top__Social__icons {
+    padding: 20px;
+    height: 40px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: space-between;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+    color: #e56d14 !important;
+  }
+  .list-social__link {
+    align-items: center;
+    display: flex;
+    padding: 1.3rem;
+    color: rgb(var(--color-foreground));
+    color: #e56d14 !important;
+  }
+
+  ul.list.list-social.list-unstyled {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: space-between;
+    align-items: center;
+  }
+
+  .otherMenus.flex.space-x-4 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-content: space-between;
+    align-items: center;
+  }
+
+  p.text-\[14px\].text-white {
+    margin: 0 22px 3px 0;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+</style>

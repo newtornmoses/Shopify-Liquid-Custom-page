@@ -1,0 +1,176 @@
+<div class="header_top__barner bg-gray-200 w-full h-24 flex justify-between">
+  <img
+    src="https://organicpositive.in/wp-content/uploads/2020/08/o-positive_Logo.png"
+    alt=""
+    class="image_barnner"
+  />
+  <div class="search_div flex space-x-4">
+    <!-- <form
+      action="{{ routes.search_url }}"
+      method="get"
+      role="search"
+      class="search_barner_input" -->
+    <!-- > -->
+    <input
+      type="search"
+      name="q"
+      class="search_barner_input"
+      placeholder="Search Products here"
+    />
+
+    <!-- <form
+      action="{{ routes.search_url }}"
+      method="get"
+      class="header-bar__search-form clearfix"
+      role="search"
+    >
+      <input type="hidden" name="type" value="product" />
+      <button
+        type="submit"
+        class="btn btn--search icon-fallback-text header-bar__search-submit"
+      >
+        <span class="icon icon-search" aria-hidden="true"></span>
+      </button>
+      <input
+        type="search"
+        name="q"
+        value="{{ search.terms | escape }}"
+        aria-label="{{ 'general.search.placeholder' | t }}"
+        class="header-bar__search-input"
+        placeholder="{{ 'general.search.placeholder' | t }}"
+      />
+    </form> -->
+
+    <!-- <div class="header-bar__module header-bar__search">
+      {% render 'search-bar' with 'header' %}
+    </div> -->
+
+    <!-- </form> -->
+
+    <button class="seachBtn">Search</button>
+  </div>
+</div>
+
+<div class="bottom__section">
+  <div class="bottom__menu__header">
+
+    <!-- Main Menu  -->
+    <div
+      class="
+        grid__item
+        post-large--two-thirds post-large--display-table-cell
+        medium-down--hide main__menu
+      "
+    >
+      {% render 'site-nav' with linklists[section.settings.nav_menu] %}
+      <a href="{{ routes.cart_url }}" class="cart-page-link mobile-cart-page-link">
+        <span class="icon icon-cart header-bar__cart-icon" aria-hidden="true"></span>
+        {{ 'layout.cart.title' | t }} <span class="cart-count{% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}</span>
+      </a>
+    </div>
+    
+    <!-- Mobile Menu  -->
+    <div class="wrapper post-large--hide">
+      {% unless section.settings.nav_menu == blank and section.settings.header_search_enable == false and shop.customer_accounts_enabled == false %}
+        <button type="button" class="mobile-nav-trigger" id="MobileNavTrigger" aria-controls="MobileNav" aria-expanded="false">
+          <span class="icon icon-hamburger" aria-hidden="true"></span>
+          {{ 'layout.navigation.menu' | t }}
+        </button>
+      {% endunless %}
+      <a href="{{ routes.cart_url }}" class="cart-page-link mobile-cart-page-link">
+        <span class="icon icon-cart header-bar__cart-icon" aria-hidden="true"></span>
+        {{ 'layout.cart.title' | t }} <span class="cart-count{% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}</span>
+      </a>
+    </div>
+    {% render 'mobile-nav' with linklists[section.settings.nav_menu] %}
+  </div>
+  </div>
+
+  <div class="cart"></div>
+</div>
+
+<style>
+  .header_top__barner {
+    height: 150px;
+    background-color: #dddcd2;
+    padding: 19px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  img.image_barnner {
+    width: 298px;
+    object-fit: contain;
+    margin-left: 86px;
+  }
+  .search_div {
+    background-color: #fefefe;
+    height: 44px;
+    width: 459px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    justify-content: flex-end;
+    align-items: stretch;
+    overflow: hidden;
+    margin-right: 88px;
+    font-size: 14px;
+  }
+
+  input.search_barner_input {
+    outline: none;
+    background-color: #00000000;
+    flex: 1;
+    padding-left: 16px;
+    height: 44px;
+    margin-right: -13px;
+    font-size: 13px;
+    border-radius: 20px;
+    outline: none;
+  }
+
+  button.seachBtn {
+    background: #11b618;
+    color: white;
+    font-weight: bold;
+    border: none;
+  }
+
+  button.seachBtn {
+    background: #11b618;
+    color: white;
+    font-weight: bold;
+    border-radius: 0px 20px 20px 0px;
+    width: 100px;
+    cursor: pointer;
+  }
+
+  button.seachBtn:hover {
+    background: #0e6612;
+    color: white;
+  }
+
+  .main__menu{
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: black;
+    width: 100%;
+  }
+
+  .cart-page-link{
+    color: white;
+     margin-left: 23px
+  }
+  /* a.cart-page-link.mobile-cart-page-link {
+    margin-left: 23
+px
+;
+} */
+</style>
