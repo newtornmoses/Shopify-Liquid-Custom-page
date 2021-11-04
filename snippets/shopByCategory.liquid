@@ -1,0 +1,204 @@
+<div class="shop_by_category">
+  <h1 class="Category_text">
+    <span class="shop_separater_text">SHOP BY</span> CATEGORY
+  </h1>
+  <div class="shop_by_category__barnner">
+    <div class="shop_by_category__barnner__top__section">
+      <p class="top">100% ORGANIC</p>
+      <button class="shop_by_cat">SHOP BY CATEGORY</button>
+    </div>
+    <div class="shop_by_category__barnner__bottom__section">
+      <p class="top">RIGHT FOOD,</p>
+      <p class="lower">GREAT TASTE!</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .Category_text {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 35px;
+    color: #606060;
+  }
+
+  span.shop_separater_text {
+    color: #f27824;
+  }
+
+  .shop_by_category__barnner {
+    margin: 0 auto !important;
+    width: 67%;
+    background: #8080807d;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-items: stretch;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: verse;
+    height: 32vh;
+    position: relative;
+  }
+
+  .shop_by_category__barnner {
+    margin: 0 auto !important;
+    width: 67%;
+    background: #8080807d;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    height: 32vh;
+    background-image: url(https://cdn.shopify.com/s/files/1/0549/9463/2764/files/Organic-3_800x400.png?v=1636016795);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+  }
+
+  .shop_by_category__barnner__top__section {
+    background: white;
+    padding: 27px;
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    width: 17vw;
+    height: fit-content;
+  }
+
+  p.top {
+    font-size: 38px;
+    font-weight: bold;
+    font-family: system-ui;
+  }
+
+  button.shop_by_cat {
+    border: 0px;
+    background: #ff965c;
+    color: #fffffe;
+    font-size: 21px;
+    padding: 8px;
+    font-weight: 500;
+  }
+
+  button.shop_by_cat:hover {
+    background: #342f2d;
+  }
+
+  .shop_by_category__barnner .shop_by_category__barnner__bottom__section:hover {
+    background: #da690d;
+    cursor: pointer;
+  }
+
+  .shop_by_category__barnner__top__section {
+    background: white;
+    padding: 27px;
+    display: flex;
+    flex-direction: column;
+    width: 16vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid #00000012;
+  }
+
+  .shop_by_category__barnner__bottom__section p.top {
+    color: white;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .shop_by_category__barnner__bottom__section p.lower {
+    font-weight: 800;
+    font-size: 21px;
+    text-align: center;
+  }
+
+  .shop_by_category__barnner__bottom__section p.top {
+    color: white;
+    text-align: center;
+  }
+
+  .shop_by_category__barnner .shop_by_category__barnner__bottom__section {
+    background: #47c447;
+    padding: 10px;
+    width: 10vw;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    cursor: pointer;
+  }
+  @media screen and (max-width: 1670px) {
+    .shop_by_category__barnner {
+      margin: 0 auto !important;
+      min-width: 73%;
+      background: #8080807d;
+      display: flex;
+      align-content: center;
+      justify-content: space-evenly;
+      align-items: center;
+      justify-items: stretch;
+      flex-direction: row;
+      flex-wrap: wrap;
+      flex-direction: row-reverse;
+      min-height: 56vh;
+      background-image: url(https://cdn.shopify.com/s/files/1/0549/9463/2764/files/Organic-3_800x400.png?v=1636016795);
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: auto !important;
+    }
+
+    .shop_by_category__barnner__top__section {
+      background: white;
+      padding: 27px;
+      display: flex;
+      flex-direction: column;
+      width: 25vw;
+      position: absolute;
+      right: 0;
+      top: 0;
+      min-width: 286px;
+      border: 1px solid #00000012;
+    }
+
+    .shop_by_category__barnner .shop_by_category__barnner__bottom__section {
+      background: #47c447;
+      padding: 10px;
+      width: 16vw;
+      cursor: pointer;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      min-width: 186px;
+    }
+  }
+
+  @media screen and (max-width: 600) {
+    .shop_by_category__barnner .shop_by_category__barnner__bottom__section {
+      background: #47c447;
+      padding: 10px;
+      width: 193px !important;
+      cursor: pointer;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    .shop_by_category__barnner__top__section {
+      background: white;
+      padding: 27px;
+      display: flex;
+      flex-direction: column;
+      width: 254px !important;
+      position: absolute;
+      right: 0;
+      top: 0;
+      border: 1px solid #00000012;
+    }
+  }
+</style>

@@ -1,5 +1,29 @@
 
+<style>
 
+div#flexslider--slider {
+    margin-top: -28px;
+}
+
+a.slides__btn.btn {
+    BACKGROUND: #e91e63;
+    width: 200px;
+}
+
+.flex-control-nav {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    z-index: 3;
+    background: #323232;
+}
+
+.slides__title--large {
+    font-size: 375% !important;
+}
+</style>
 
 {%- if settings.enable_wide_layout -%}
   {%- assign max_width = 1280 -%}
@@ -148,11 +172,11 @@
                   data-label-pause="{{ 'home_page.slideshow.pause' | t }}"
                   data-label-play="{{ 'home_page.slideshow.play' | t }}"
                   data-slider-pause>
-            <span class="icon icon-pause" aria-hidden="true"></span>
-            <span class="icon icon-play" aria-hidden="true"></span>
+            {% comment %} <span class="icon icon-pause" aria-hidden="true"></span>
+            <span class="icon icon-play" aria-hidden="true"></span> {% endcomment %}
           </button>
         {%- endif -%}
-        <ul class="slider-navigation">
+        {% comment %} <ul class="slider-navigation">
           <li>
             <button class="slider__controls-button slider__controls-button--prev" aria-label="{{ 'home_page.slideshow.previous_slide' | t }}" data-slider-navigation data-slider-prev>
               <span class="icon icon-arrow-left" aria-hidden="true"></span>
@@ -163,7 +187,7 @@
               <span class="icon icon-arrow-right" aria-hidden="true"></span>
             </button>
           </li>
-        </ul>
+        </ul> {% endcomment %}
       </div>
     {%- endif -%}
     <div class="slideshow__mobile-text-container">
