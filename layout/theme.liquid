@@ -111,10 +111,14 @@
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ request.page_type | handle }}">
 
   {% section 'header' %}
+{% if template == 'index' %}
+  {% section 'slider' %}
+  {% render  'shopByCategory' %}
+  {% render 'CategorySection' %}
+  {% render 'ProductsCollection' %}
+  
 
-{% section 'slider' %}
-{% render  'shopByCategory' %}
-{% render 'CategorySection' %}
+ {%endif%} 
   <main class="wrapper main-content" role="main">
     <div class="grid" >
         <div class="grid__item">
