@@ -37,24 +37,28 @@
     </div>
   </div>
 
-  <div
-    class="category"
+  <div class="category"
     style="
       background: url(https://organicpositive.in/wp-content/uploads/2020/05/assorted-cooking-spices-2802527-1024x771.jpg);
-    "
-  >
+    ">
     <div class="category_content">
-      <h1 class="text_header">ORGANICALLY GROWN RICE</h1>
-      <p class="text_desctiption">
-        Our range of rice encompasses everything from Sona Masuri to Basmati
-        Rice, all organically grown, nutritious and tasty. Good health every
-        day.
-      </p>
-      <div class="button_div_shopNow">
-        <button class="shopNow">SHOP NOW</button>
-      </div>
+        <h1 class="text_header">ORGANICALLY GROWN RICE</h1>
+        <p class="text_desctiption">
+          Our range of rice encompasses everything from Sona Masuri to Basmati
+          Rice, all organically grown, nutritious and tasty. Good health every
+          day.
+        </p>
+
+        <div class="button_div_shopNow">
+          <button class="shopNow">SHOP NOW</button>
+        </div>
+
     </div>
+
   </div>
+
+
+
 
   <div class="category">
     <div class="category_selection_row">
@@ -73,7 +77,14 @@
       <p class="cat_icon">>></p>
       <p class="cat_text">Salt</p>
     </div>
+
+     <div class="category_selection_row">
+      <p class="cat_icon">>></p>
+      <p class="cat_text">Cereal & Pulses</p>
+    </div>
   </div>
+
+
 </div>
 
 <style>
@@ -146,4 +157,62 @@
     background: yellowgreen;
     cursor: pointer;
   }
+
+  .category_selection_row:nth-child(1) {
+    background: #ff9800;
+}
+
+
+.category_selection_row:nth-child(2) {
+    background: #ff5722;
+}
+
+
+.category_selection_row:nth-child(3) {
+    background: #ff8a65;
+}
+
+.category_selection_row:nth-child(4) {
+    background: #ffcc80;
+}
+
+
+
+.category_selection_row:nth-child(5) {
+     background: #eeeeee;
+}
+
+
+.category_selection_row {
+   font-size: 22px;
+    padding: 3px;
+    display: flex;
+    gap: 13px;
+    align-content: center;
+    justify-content: start;
+    align-items: flex-start;
+    height: 47px;
+}
+
+.category_selection_row:hover {
+    padding-left: 8px;
+    transition: all 1s cubic-bezier(0, 0, 0, 0.98);
+}
+
+@media only screen and (max-width: 920px) {
+ 
+
+    .category {
+   
+    width: 500px !important;
+    min-height: 311px;
+    padding: 10px;
+    margin-bottom: 72px;
+    position: relative;
+    background-size: cover !important;
+    margin: 20px auto;
+    padding-bottom: 37px;
+
+}
+}
 </style>
