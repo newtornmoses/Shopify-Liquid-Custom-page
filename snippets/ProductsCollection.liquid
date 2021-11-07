@@ -1,7 +1,17 @@
 <!-- organic-products -->
 <div class="products_collection">
+ <div class="collection_title_div">
+     <span class="bar"></span>
+
+     <div class="title">
+    <h1 class="collection__title"> <span class="collection_text_span">EXCITING</span>  COMBOS</h1>
+
+     </div>
+     <span class="bar"></span>
+
+ </div>
     <div class="product_collection__wrapper">
-{% for product in collections['all'].products %}
+{% for product in collections['organic-products'].products %}
    
 <div class="product">
     <a href={{ product.url}} class="product__link">
@@ -10,10 +20,13 @@
 <p class="product_title"> {{ product.title }}</p>
 <p class="product_price">{{product.price | money}} </p>
 <div class="addtoCart_container">
-    <form action="/cart/add" method="post" id="product-form-{{ product.id }}">   
-  <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-<button class="addTocart">Add to Cart</button>
-</form>
+    <!-- <form action="/cart/add" method="post" id="product-form-{{ product.id }}">   
+  <input type="hidden" name="id" value="{{ product.variants.first.id }}"> -->
+    <a href={{ product.url}} class="product__link">
+
+<button class="addTocart">View Item</button>
+</a>
+<!-- </form> -->
 
 </div>
 </div>
@@ -25,7 +38,100 @@
 </div>
 
 
+<!-- Natural-products -->
+<div class="products_collection">
+ <div class="collection_title_div">
+     <span class="bar"></span>
+
+     <div class="title">
+    <h1 class="collection__title"> <span class="collection_text_span">TODAY’S </span>  BESTSELLERS</h1>
+
+     </div>
+     <span class="bar"></span>
+
+ </div>
+    <div class="product_collection__wrapper">
+{% for product in collections['Natural-products'].products %}
+   
+<div class="product">
+    <a href={{ product.url}} class="product__link">
+    <img src={{ product.images[0] | img_url: "medium" }}  alt={{product.title}} class="product_img">
+</a>
+<p class="product_title"> {{ product.title }}</p>
+<p class="product_price">{{product.price | money}} </p>
+<div class="addtoCart_container">
+    <!-- <form action="/cart/add" method="post" id="product-form-{{ product.id }}">   
+  <input type="hidden" name="id" value="{{ product.variants.first.id }}"> -->
+    <a href={{ product.url}} class="product__link">
+
+<button class="addTocart">View Item</button>
+</a>
+<!-- </form> -->
+
+</div>
+</div>
+  
+
+  
+{% endfor %}
+    </div>
+</div>
+
+
+
+<!-- all-products -->
+<div class="products_collection">
+ <div class="collection_title_div">
+     <span class="bar"></span>
+
+     <div class="title">
+    <h1 class="collection__title"> <span class="collection_text_span">RECENT </span>   PRODUCTS</h1>
+
+     </div>
+     <span class="bar"></span>
+
+ </div>
+    <div class="product_collection__wrapper">
+{% for product in collections['all'].products %}
+   
+<div class="product">
+    <a href={{ product.url}} class="product__link">
+    <img src={{ product.images[0] | img_url: "medium" }}  alt={{product.title}} class="product_img">
+</a>
+<p class="product_title"> {{ product.title }}</p>
+<p class="product_price">{{product.price | money}} </p>
+<div class="addtoCart_container">
+    <!-- <form action="/cart/add" method="post" id="product-form-{{ product.id }}">   
+  <input type="hidden" name="id" value="{{ product.variants.first.id }}"> -->
+    <a href={{ product.url}} class="product__link">
+
+<button class="addTocart">View Item</button>
+</a>
+<!-- </form> -->
+
+</div>
+</div>
+  
+
+  
+{% endfor %}
+    </div>
+</div>
+
+
+
+
+
 <style>
+span.collection_text_span {
+    color: #ff7322;
+}
+    h1.collection__title {
+    text-align: center;
+    padding: 13px;
+    color: #454f5b;
+    font-family: sans-serif;
+}
     .products_collection {
     margin: 0 auto !important;
     width: 73%;
@@ -93,6 +199,21 @@ p.product_price {
     font-size: 14px;
     font-weight: bold;
 }
+
+span.bar {
+    height: 5px;
+    background: #9c9fa145;
+    width: 30%;
+    display: -webkit-inline-box;
+}
+
+.collection_title_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 27px;
+}
+
 
 @media screen and (max-width:640px) {
     .product {
