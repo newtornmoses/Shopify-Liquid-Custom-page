@@ -1,3 +1,10 @@
+<style>
+img.social-icons_insta {
+    margin: 0 -78px;
+}
+</style>
+
+
 <footer class="site-footer small--text-center" role="contentinfo">
 
 <div class="wrapper">
@@ -93,6 +100,8 @@
                 Loop through the social network links
               {% endcomment %}
               {% include 'social-links' %}
+
+              <img src="https://cdn.shopify.com/s/files/1/0549/9463/2764/files/6fc98eab-0143-4c34-a5ae-b2b7cf6563ce_256x256_crop_center.jpg?v=1636275141" alt="Social icons" class="social-icons_insta">
           </div>
 
         {% when 'text' %}
@@ -118,7 +127,7 @@
 
   <div class="grid">
     <div class="grid__item text-center">
-      <p class="site-footer__links">{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url }}. {{ powered_by_link }}</p>
+      <p class="site-footer__links">{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url }}</p>
     </div>
   </div>
 
