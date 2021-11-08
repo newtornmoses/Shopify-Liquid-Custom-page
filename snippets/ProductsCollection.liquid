@@ -1,147 +1,134 @@
 <!-- organic-products -->
 <div class="products_collection">
- <div class="collection_title_div">
-     <span class="bar"></span>
+  <div class="collection_title_div">
+    <span class="bar"></span>
 
-     <div class="title">
-    <h1 class="collection__title"> <span class="collection_text_span">EXCITING</span>  COMBOS</h1>
-
-     </div>
-     <span class="bar"></span>
-
- </div>
-    <div class="product_collection__wrapper">
-{% for product in collections['organic-products'].products %}
-   
-<div class="product">
-    <a href={{ product.url}} class="product__link">
-    <img src={{ product.images[0] | img_url: "medium" }}  alt={{product.title}} class="product_img">
-</a>
-<p class="product_title"> {{ product.title }}</p>
-<p class="product_price">{{product.price | money}} </p>
-<div class="addtoCart_container">
-    <!-- <form action="/cart/add" method="post" id="product-form-{{ product.id }}">   
-  <input type="hidden" name="id" value="{{ product.variants.first.id }}"> -->
-    <a href={{ product.url}} class="product__link">
-
-<button class="addTocart">View Item</button>
-</a>
-<!-- </form> -->
-
-</div>
-</div>
-  
-
-  
-{% endfor %}
+    <div class="title">
+      <h1 class="collection__title">
+        <span class="collection_text_span">EXCITING</span> COMBOS
+      </h1>
     </div>
-</div>
+    <span class="bar"></span>
+  </div>
+  <div class="product_collection__wrapper">
+    {% for product in collections['organic-products'].products %}
 
+    <div class="product">
+      <a href="{{ product.url }}" class="product__link">
+        <img src={{ product.images[0] | img_url: "medium" }} alt={{
+          product.title
+        }}
+        class="product_img">
+      </a>
+      <p class="product_title">{{ product.title }}</p>
+      <p class="product_price">{{ product.price | money }}</p>
+      <div class="addtoCart_container">
+        <!-- <form action="/cart/add" method="post" id="product-form-{{ product.id }}">   
+  <input type="hidden" name="id" value="{{ product.variants.first.id }}"> -->
+        <a href="{{ product.url }}" class="product__link">
+          <button class="addTocart">View Item</button>
+        </a>
+        <!-- </form> -->
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
 
 <!-- Natural-products -->
 <div class="products_collection">
- <div class="collection_title_div">
-     <span class="bar"></span>
+  <div class="collection_title_div">
+    <span class="bar"></span>
 
-     <div class="title">
-    <h1 class="collection__title"> <span class="collection_text_span">TODAY’S </span>  BESTSELLERS</h1>
-
-     </div>
-     <span class="bar"></span>
-
- </div>
-    <div class="product_collection__wrapper">
-{% for product in collections['Natural-products'].products %}
-   
-<div class="product">
-    <a href={{ product.url}} class="product__link">
-    <img src={{ product.images[0] | img_url: "medium" }}  alt={{product.title}} class="product_img">
-</a>
-<p class="product_title"> {{ product.title }}</p>
-<p class="product_price">{{product.price | money}} </p>
-<div class="addtoCart_container">
-    <!-- <form action="/cart/add" method="post" id="product-form-{{ product.id }}">   
-  <input type="hidden" name="id" value="{{ product.variants.first.id }}"> -->
-    <a href={{ product.url}} class="product__link">
-
-<button class="addTocart">View Item</button>
-</a>
-<!-- </form> -->
-
-</div>
-</div>
-  
-
-  
-{% endfor %}
+    <div class="title">
+      <h1 class="collection__title">
+        <span class="collection_text_span">TODAY’S </span> BESTSELLERS
+      </h1>
     </div>
+    <span class="bar"></span>
+  </div>
+  <div class="product_collection__wrapper">
+    {% for product in collections['Natural-products'].products %}
+
+    <div class="product">
+      <a href="{{" product.url}} class="product__link">
+        <img src={{ product.images[0] | img_url: "medium" }} alt={{
+          product.title
+        }}
+        class="product_img">
+      </a>
+      <p class="product_title">{{ product.title }}</p>
+      <p class="product_price">{{ product.price | money }}</p>
+      <div class="addtoCart_container">
+        <!-- <form action="/cart/add" method="post" id="product-form-{{ product.id }}">   
+  <input type="hidden" name="id" value="{{ product.variants.first.id }}"> -->
+        <a href="{{" product.url}} class="product__link">
+          <button class="addTocart">View Item</button>
+        </a>
+        <!-- </form> -->
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
 </div>
-
-
 
 <!-- all-products -->
 <div class="products_collection">
- <div class="collection_title_div">
-     <span class="bar"></span>
+  <div class="collection_title_div">
+    <span class="bar"></span>
 
-     <div class="title">
-    <h1 class="collection__title"> <span class="collection_text_span">RECENT </span>   PRODUCTS</h1>
-
-     </div>
-     <span class="bar"></span>
-
- </div>
-    <div class="product_collection__wrapper">
-{% for product in collections['all'].products %}
-   
-<div class="product">
-    <a href={{ product.url}} class="product__link">
-    <img src={{ product.images[0] | img_url: "medium" }}  alt={{product.title}} class="product_img">
-</a>
-<p class="product_title"> {{ product.title }}</p>
-<p class="product_price">{{product.price | money}} </p>
-<div class="addtoCart_container">
-    <!-- <form action="/cart/add" method="post" id="product-form-{{ product.id }}">   
-  <input type="hidden" name="id" value="{{ product.variants.first.id }}"> -->
-    <a href={{ product.url}} class="product__link">
-
-<button class="addTocart">View Item</button>
-</a>
-<!-- </form> -->
-
-</div>
-</div>
-  
-
-  
-{% endfor %}
+    <div class="title">
+      <h1 class="collection__title">
+        <span class="collection_text_span">RECENT </span> PRODUCTS
+      </h1>
     </div>
+    <span class="bar"></span>
+  </div>
+  <div class="product_collection__wrapper">
+    {% for product in collections['all'].products %}
+
+    <div class="product">
+      <a href="{{ product.url }}">
+        <img src={{ product.images[0] | img_url: "medium" }} alt={{
+          product.title
+        }}
+        class="product_img">
+      </a>
+      <p class="product_title">{{ product.title }}</p>
+      <p class="product_price">{{ product.price | money }}</p>
+      <div class="addtoCart_container">
+        <!-- <form action="/cart/add" method="post" id="product-form-{{ product.id }}">   
+  <input type="hidden" name="id" value="{{ product.variants.first.id }}"> -->
+        <a class="product__link" href="{{ product.url }}">
+          <button class="addTocart">View Item</button>
+        </a>
+        <!-- </form> -->
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
 </div>
-
-
-
-
 
 <style>
-span.collection_text_span {
+  span.collection_text_span {
     color: #ff7322;
-}
-    h1.collection__title {
+  }
+  h1.collection__title {
     text-align: center;
     padding: 13px;
     color: #454f5b;
     font-family: sans-serif;
-}
-    .products_collection {
+  }
+  .products_collection {
     margin: 0 auto !important;
     width: 73%;
     margin-top: 40px !important;
-   
   }
 
-
-  
-    .product_collection__wrapper {
+  .product_collection__wrapper {
     display: flex;
     grid-auto-flow: column;
     grid-template-columns: auto auto auto auto;
@@ -150,74 +137,71 @@ span.collection_text_span {
     flex-wrap: wrap;
     column-gatp: 67px;
     justify-content: space-between;
-}
+  }
 
-.product {
+  .product {
     width: 226px;
-    margin-bottom: 40px;   
+    margin-bottom: 40px;
     height: 283px;
     border: 1px solid #8080803d;
+  }
 
-}
-
-img.product_img {
+  img.product_img {
     width: 100%;
     max-height: 197px;
     object-fit: cover;
     height: 150px;
     cursor: pointer;
-}
+  }
 
-button.addTocart {
+  button.addTocart {
     border: navajowhite;
     background: #ff7322;
     color: white;
     width: 148px;
     font-size: 14px;
     height: 35px;
-}
+  }
 
-button.addTocart:hover {
+  button.addTocart:hover {
     background: #2a2a2a;
-}
+  }
 
-
-.addtoCart_container {
+  .addtoCart_container {
     display: flex;
     justify-content: center;
     font-size: 17px;
-}
+  }
 
-p.product_title {
+  p.product_title {
     text-align: center;
     font-size: 13px;
-}
+  }
 
-p.product_price {
+  p.product_price {
     text-align: center;
     color: #607d8b;
     font-size: 14px;
     font-weight: bold;
-}
+  }
 
-span.bar {
+  span.bar {
     height: 5px;
     background: #9c9fa145;
     width: 30%;
     display: -webkit-inline-box;
-}
+  }
 
-.collection_title_div {
+  .collection_title_div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 27px;
-}
+  }
 
-
-@media screen and (max-width:640px) {
+  @media screen and (max-width: 640px) {
     .product {
-    width: 452px;
-}
-}
+      width: 452px;
+    }
+  }
 </style>
