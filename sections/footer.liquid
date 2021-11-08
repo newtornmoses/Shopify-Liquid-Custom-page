@@ -2,6 +2,43 @@
 img.social-icons_insta {
     margin: 0 -78px;
 }
+
+.footer__links__div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 89px;
+}
+
+img.social-icons:hover {
+    transform: scale(1.2);
+    transition: all 1s cubic-bezier(0.42, 0, 0.03, 1.35);
+}
+
+ul.site-footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: space-between;
+    align-items: center;
+    width: 206px;
+    height: 88px;
+}
+
+.site-footer {
+    background-color: rgb(0 0 0 / 74%);
+    padding-top: 30px;
+    padding-bottom: 20px;
+    color: #f5f6f7;
+}
+ul.site-footer__links a:hover {
+    color: #e69a0b;
+}
+
+ul.site-footer__links a {
+    color: #f5f6f7;
+}
 </style>
 
 
@@ -100,8 +137,14 @@ img.social-icons_insta {
                 Loop through the social network links
               {% endcomment %}
               {% include 'social-links' %}
-
-              <img src="https://cdn.shopify.com/s/files/1/0549/9463/2764/files/6fc98eab-0143-4c34-a5ae-b2b7cf6563ce_256x256_crop_center.jpg?v=1636275141" alt="Social icons" class="social-icons_insta">
+<div class="footer__links__div">
+  <a href="https://www.facebook.com/Naturesbarnorganic" class="social__media_links" target="__blank">
+              <img src="https://cdn.shopify.com/s/files/1/0549/9463/2764/files/5365678_fb_facebook_facebook_logo_icon_bca407cd-3be4-409f-a7ba-899c1c5e7897_256x256_crop_center.png?v=1636310478" alt="Social icons" class="social-icons">
+  </a>
+  <a href="https://www.instagram.com/naturesbarnfzco/" class="social__media_links" target="__blank">
+              <img src="https://cdn.shopify.com/s/files/1/0549/9463/2764/files/5296765_camera_instagram_instagram_logo_icon_bb6a77fe-216e-4af9-9cb5-0727fba5a2f9_256x256_crop_center.png?v=1636310478" alt="Social icons" class="social-icons">
+</a>
+</div>
           </div>
 
         {% when 'text' %}
@@ -127,7 +170,7 @@ img.social-icons_insta {
 
   <div class="grid">
     <div class="grid__item text-center">
-      <p class="site-footer__links">{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url }}</p>
+      <p class="site-footer__links">{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: '%Y' }}, {{ shop.name  }}</p>
     </div>
   </div>
 

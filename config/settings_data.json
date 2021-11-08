@@ -1,20 +1,6 @@
 {
   "current": {
-    "checkout_header_image": "",
-    "checkout_logo_image": "",
-    "checkout_logo_position": "left",
-    "checkout_logo_size": "medium",
-    "checkout_body_background_image": "",
-    "checkout_body_background_color": "#fff",
-    "checkout_input_background_color_mode": "white",
-    "checkout_sidebar_background_image": "",
-    "checkout_sidebar_background_color": "#fafafa",
-    "checkout_heading_font": "Helvetica Neue",
-    "checkout_body_font": "Helvetica Neue",
-    "checkout_accent_color": "#767676",
-    "checkout_button_color": "#e42c00",
-    "checkout_error_color": "#e42c00",
-    "enable_wide_layout": false,
+    "enable_wide_layout": true,
     "color_topbar_bg": "#cbd5cc",
     "color_body_bg": "#ffffff",
     "color_footer_bg": "rgba(0,0,0,0)",
@@ -34,10 +20,30 @@
     "type_accent_size": "16px",
     "type_accent_transform": false,
     "type_accent_spacing": false,
+    "favicon": "shopify:\/\/shop_images\/naturesbarn_logo_88ed2a68-8548-401b-b34e-ca459b7448bf.png",
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_pinterest_link": "",
+    "social_google_plus_link": "",
+    "social_snapchat_link": "",
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": true,
     "social_sharing_style": "normal",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#767676",
+    "checkout_button_color": "#e42c00",
+    "checkout_error_color": "#e42c00",
     "collections_center_grid_link": false,
     "sections": {
       "header": {
@@ -45,9 +51,13 @@
         "settings": {
           "header_search_enable": true,
           "logo_max_width": "60",
-          "nav_below_logo": true,
+          "nav_menu": "main-menu",
+          "nav_below_logo": false,
           "left_aligned_logo": false,
-          "show_header_lines": false
+          "show_header_lines": true,
+          "show_announcement": false,
+          "header_text": "Announce something here",
+          "announcement_link": ""
         }
       },
       "footer": {
@@ -55,6 +65,7 @@
         "blocks": {
           "footer-0": {
             "type": "blog",
+            "disabled": true,
             "settings": {
               "blog": "news"
             }
@@ -62,6 +73,7 @@
           "footer-1": {
             "type": "menu",
             "settings": {
+              "menu_title": "Links",
               "menu": "footer"
             }
           },
@@ -71,7 +83,9 @@
           },
           "footer-3": {
             "type": "newsletter",
-            "settings": {}
+            "settings": {
+              "subtext": "<p>Sign up for the latest news, offers and styles<\/p>"
+            }
           }
         },
         "block_order": [
@@ -82,38 +96,6 @@
         ],
         "settings": {
           "show_methods_of_payment": true
-        }
-      },
-      "slider": {
-        "type": "slider",
-        "blocks": {
-          "slider-0": {
-            "type": "image",
-            "settings": {}
-          },
-          "slider-1": {
-            "type": "image",
-            "settings": {}
-          },
-          "slider-2": {
-            "type": "image",
-            "settings": {}
-          },
-          "slider-3": {
-            "type": "image",
-            "settings": {}
-          }
-        },
-        "block_order": [
-          "slider-0",
-          "slider-1",
-          "slider-2",
-          "slider-3"
-        ],
-        "settings": {
-          "slider_autorotate": false,
-          "slider_autorotate_rate": 5,
-          "slider_home_transition": "fade"
         }
       },
       "product-template": {
@@ -148,22 +130,31 @@
       },
       "collection-list": {
         "type": "collection-list",
+        "disabled": true,
         "blocks": {
           "collection-list-0": {
             "type": "collection",
-            "settings": {}
+            "settings": {
+              "collection": ""
+            }
           },
           "collection-list-1": {
             "type": "collection",
-            "settings": {}
+            "settings": {
+              "collection": ""
+            }
           },
           "collection-list-2": {
             "type": "collection",
-            "settings": {}
+            "settings": {
+              "collection": ""
+            }
           },
           "collection-list-3": {
             "type": "collection",
-            "settings": {}
+            "settings": {
+              "collection": ""
+            }
           }
         },
         "block_order": [
@@ -176,48 +167,101 @@
           "title": "Collection list"
         }
       },
-      "collection-list-1": {
-        "type": "collection-list",
+      "newsletter": {
+        "type": "newsletter",
+        "disabled": true,
+        "settings": {
+          "heading": "Subscribe to our newsletter",
+          "subtext": "<p>Promotions, new products and sales. Directly to your inbox.<\/p>",
+          "color_bg": "#eaebea"
+        }
+      },
+      "slider": {
+        "type": "slider",
         "blocks": {
-          "collection-list-1-0": {
-            "type": "collection",
-            "settings": {}
+          "slider-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/1_XrbD6sQ5EvSCAHlUpF53Mg.jpg",
+              "alignment": "center center",
+              "overlay_opacity": 20,
+              "color_text": "#ffffff",
+              "text_alignment": "center",
+              "slide_heading": "GET THE BEST SPICES HERE",
+              "button_label": "SHOP NOW",
+              "button_link": "shopify:\/\/collections\/all"
+            }
           },
-          "collection-list-1-1": {
-            "type": "collection",
-            "settings": {}
+          "slider-1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/indian-spices-herbs-1363478.jpg",
+              "alignment": "center center",
+              "overlay_opacity": 8,
+              "color_text": "#ffffff",
+              "text_alignment": "left",
+              "slide_heading": "SEEDS & POWDER",
+              "button_label": "SHOP NOW",
+              "button_link": "shopify:\/\/collections\/all"
+            }
           },
-          "collection-list-1-2": {
-            "type": "collection",
-            "settings": {}
+          "slider-2": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Organic-3.png",
+              "alignment": "center center",
+              "overlay_opacity": 30,
+              "color_text": "#ffffff",
+              "text_alignment": "center",
+              "slide_heading": "Image slide",
+              "button_label": "",
+              "button_link": ""
+            }
           },
-          "collection-list-1-3": {
-            "type": "collection",
-            "settings": {}
+          "slider-3": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "alignment": "center center",
+              "overlay_opacity": 30,
+              "color_text": "#ffffff",
+              "text_alignment": "center",
+              "slide_heading": "Image slide",
+              "button_label": "",
+              "button_link": ""
+            }
           }
         },
         "block_order": [
-          "collection-list-1-0",
-          "collection-list-1-1",
-          "collection-list-1-2",
-          "collection-list-1-3"
+          "slider-0",
+          "slider-1",
+          "slider-2",
+          "slider-3"
         ],
         "settings": {
-          "title": ""
+          "slider_height": "large",
+          "slider_autorotate": true,
+          "slider_autorotate_rate": 5,
+          "slider_home_transition": "fade",
+          "text_size": "large"
         }
       },
-      "newsletter": {
-        "type": "newsletter",
+      "16363095423d5c4822": {
+        "type": "feature-row",
+        "disabled": true,
         "settings": {
-          "color_bg": "#eaebea"
+          "layout": "left",
+          "title": "Image with text",
+          "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+          "button_label": "",
+          "button_link": ""
         }
       }
     },
     "content_for_index": [
       "slider",
-      "collection-list",
-      "collection-list-1",
-      "newsletter"
+      "16363095423d5c4822"
     ]
   },
   "presets": {
