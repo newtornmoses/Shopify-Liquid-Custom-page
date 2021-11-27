@@ -1,3 +1,46 @@
+
+<!-- Natural-products -->
+<div class="products_collection">
+  <div class="collection_title_div">
+    <span class="bar"></span>
+
+    <div class="title">
+      <h1 class="collection__title">
+        <span class="collection_text_span">TODAY’S </span> BESTSELLERS
+      </h1>
+    </div>
+    <span class="bar"></span>
+  </div>
+  <div class="product_collection__wrapper">
+    {% for product in collections['Natural-products'].products %}
+
+    <div class="product">
+      <a href="{{ product.url}}" class="product__link">
+        <img src={{ product.images[0] | img_url: "medium" }} alt={{
+          product.title
+        }}
+        class="product_img">
+      </a>
+      <p class="product_title">{{ product.title }}</p>
+      <p class="product_price">{{ product.price | money }}</p>
+      <div class="addtoCart_container">
+        <!-- <form action="/cart/add" method="post" id="product-form-{{ product.id }}">   
+  <input type="hidden" name="id" value="{{ product.variants.first.id }}"> -->
+        <a href="{{product.url}}" class="product__link">
+          <button class="addTocart">View Item</button>
+        </a>
+        <!-- </form> -->
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+
+
+
+
+
 <div class="shop_by_category">
   <h1 class="Category_text">
     <span class="shop_separater_text">SHOP BY</span> CATEGORY
@@ -5,7 +48,12 @@
   <div class="shop_by_category__barnner">
     <div class="shop_by_category__barnner__top__section">
       <p class="top">100% ORGANIC</p>
-      <button class="shop_by_cat">SHOP BY CATEGORY</button>
+      <p class="shop_by_cat">PRODUCTS</p>
+      {% comment %} <p class="shop_by_cat">Spices</p>
+      <p class="shop_by_cat">Ghee</p>
+      <p class="shop_by_cat">Jaggery</p>
+      <p class="shop_by_cat">Pulses</p> {% endcomment %}
+      {% comment %} <button class="shop_by_cat">SHOP BY CATEGORY</button> {% endcomment %}
     </div>
     <div class="shop_by_category__barnner__bottom__section">
       <p class="top">RIGHT FOOD,</p>
@@ -15,6 +63,14 @@
 </div>
 
 <style>
+
+p.shop_by_cat {
+    COLOR: ORANGE;
+    font-weight: bold;
+    font-size: 46px;
+    font-family: 'Source Sans Pro';
+    margin-top: -32px;
+}
   .Category_text {
     text-align: center;
     font-size: 30px;
@@ -55,10 +111,16 @@
     flex-wrap: wrap;
     flex-direction: row-reverse;
     height: 32vh;
-    background-image: url(https://cdn.shopify.com/s/files/1/0549/9463/2764/files/Organic-3_800x400.png?v=1636016795);
-    background-size: cover;
+    background-image: url(https://cdn.shopify.com/s/files/1/0549/9463/2764/files/56bf5608-3266-437d-95cb-83606673fedf.jpg?v=1637047546);
+    
+        background-size: cover;
     background-repeat: no-repeat;
+    background-position: bottom;
+    background-repeat: revert;
     background-position-y: center;
+    border: 1px solid #80808000;
+    box-shadow: 2px 5px 7px 3px #00000026;
+    border-radius: 0px;
   }
 
   .shop_by_category__barnner__top__section {
@@ -138,7 +200,7 @@
     .shop_by_category__barnner {
       margin: 0 auto !important;
       min-width: 73%;
-      background: #8080807d;
+      background: white;
       display: flex;
       align-content: center;
       justify-content: space-evenly;
@@ -148,8 +210,8 @@
       flex-wrap: wrap;
       flex-direction: row-reverse;
       min-height: 56vh;
-      background-image: url(https://cdn.shopify.com/s/files/1/0549/9463/2764/files/Organic-3_800x400.png?v=1636016795);
-      background-size: cover;
+      background-image: url(https://cdn.shopify.com/s/files/1/0549/9463/2764/files/56bf5608-3266-437d-95cb-83606673fedf.jpg?v=1637047546);
+      background-size: contain;
       background-repeat: no-repeat;
       height: auto !important;
     }
@@ -178,6 +240,25 @@
       min-width: 186px;
     }
   }
+
+  .shop_by_category__barnner {
+    margin: 0 auto !important;
+    min-width: 73%;
+    background: white;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    min-height: 31vh;
+    background-image: url(https://cdn.shopify.com/s/files/1/0549/9463/2764/files/56bf5608-3266-437d-95cb-83606673fedf.jpg?v=1637047546);
+    background-size: contain;
+    background-repeat: no-repeat;
+   height: 47vh !important;
+}
 
   @media screen and (max-width: 600) {
     .shop_by_category__barnner .shop_by_category__barnner__bottom__section {

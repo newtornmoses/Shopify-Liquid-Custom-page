@@ -2,18 +2,19 @@
   <div
     class="category"
     style="
-      background: url(https://organicpositive.in/wp-content/uploads/2020/05/Rice-2.png);
+      background: url(https://cdn.shopify.com/s/files/1/0549/9463/2764/files/89835339-1bdb-433a-b914-69a8866ae788.jpg?v=1637042131);
     "
   >
     <div class="category_content">
-      <h1 class="text_header">ORGANICALLY GROWN RICE</h1>
+      <h1 class="text_header">ORGANICALLY GROWN SPICES</h1>
       <p class="text_desctiption">
-        Our range of rice encompasses everything from Sona Masuri to Basmati
-        Rice, all organically grown, nutritious and tasty. Good health every
-        day.
+        Our range of spices encompasses everything from Turmeric to Red Chilli
+        Powder, all organically grown with health benefits.
       </p>
       <div class="button_div_shopNow">
-        <button class="shopNow">SHOP NOW</button>
+        <a href="/collections/organic-spices"
+          ><button class="shopNow">SHOP NOW</button></a
+        >
       </div>
     </div>
   </div>
@@ -21,16 +22,18 @@
   <div
     class="category"
     style="
-      background: url(https://organicpositive.in/wp-content/uploads/2020/08/Oil-5-1024x544.png);
+      background: url(https://cdn.shopify.com/s/files/1/0549/9463/2764/files/d4442b70-9182-489d-93eb-d18410e66589.jpg?v=1637047891);
     "
   >
     <div class="category_content">
-      <h1 class="text_header">COLD-PRESSED OILS</h1>
+      <h1 class="text_header">A2 Ghee</h1>
       <p class="text_desctiption">
-        Organic helps preserve the anti-oxidants and the nutritious value
+        Prepared by Bilona method making it healthy for heart
       </p>
       <div class="button_div_shopNow">
-        <button class="shopNow">SHOP NOW</button>
+        <a href="/products/gir-cow-a2-ghee">
+          <button class="shopNow">SHOP NOW</button></a
+        >
       </div>
     </div>
   </div>
@@ -38,60 +41,68 @@
   <div
     class="category"
     style="
-      background: url(https://organicpositive.in/wp-content/uploads/2020/05/assorted-cooking-spices-2802527-1024x771.jpg);
+      background: url(https://cdn.shopify.com/s/files/1/0549/9463/2764/files/a6b0970b-8a55-4644-a17c-6344b7bf1318.jpg?v=1637047808);
     "
   >
     <div class="category_content">
-      <h1 class="text_header">WHOLE SPICES</h1>
+      <h1 class="text_header">Jaggery</h1>
       <p class="text_desctiption">
-        Organic food products that boost your health and nutrition.
+        Giving your immunity a boost-Grown organically
       </p>
 
       <div class="button_div_shopNow">
-        <button class="shopNow">SHOP NOW</button>
+        <a href="/products/organic-jaggery-whole">
+          <button class="shopNow">SHOP NOW</button>
+        </a>
       </div>
     </div>
   </div>
 
   <div class="category">
     <div class="category_selection_row">
-      <a href="/collections/seeds" class="cat__link__anchor">
+      <a href="/collections/spices" class="cat__link__anchor">
         <p class="cat_icon">>></p>
-        <p class="cat_text">Seeds</p>
+        <p class="cat_text">Spices</p>
       </a>
     </div>
 
     <div class="category_selection_row">
-      <a href="/collections/flour" class="cat__link__anchor">
+      <a href="/collections/jaggery" class="cat__link__anchor">
         <p class="cat_icon">>></p>
-        <p class="cat_text">Flour</p>
+        <p class="cat_text">Jaggery</p>
       </a>
     </div>
 
     <div class="category_selection_row">
-      <a href="/collections/dry-fruit" class="cat__link__anchor">
+      <a href="/collections/a2-ghee" class="cat__link__anchor">
         <p class="cat_icon">>></p>
-        <p class="cat_text">Dry fruits</p>
+        <p class="cat_text">A2 Ghee</p>
       </a>
     </div>
 
     <div class="category_selection_row">
-      <a href="/collections/salt" class="cat__link__anchor">
+      <a href="/collections/pulses" class="cat__link__anchor">
         <p class="cat_icon">>></p>
-        <p class="cat_text">Salt</p>
-      </a>
-    </div>
-
-    <div class="category_selection_row">
-      <a href="/collections/cereal-pulses" class="cat__link__anchor">
-        <p class="cat_icon">>></p>
-        <p class="cat_text">Cereal & Pulses</p>
+        <p class="cat_text">Pulses</p>
       </a>
     </div>
   </div>
 </div>
 
 <style>
+  .text-link,
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    background: 0 0;
+  }
+
+  .text-link,
+  a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background: 0 0;
+  }
   .cat__link__anchor {
     color: #191a1a;
     text-decoration: none;
@@ -117,6 +128,12 @@
     margin-bottom: 72px;
     position: relative;
     background-size: cover !important;
+    background: #f8f9f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #8080800d;
+    font-family: -webkit-pictograph;
   }
 
   .category_content {
@@ -124,7 +141,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    padding: 5px;
+    padding: 14px;
     width: 100%;
   }
 
@@ -206,6 +223,11 @@
     transition: all 1s cubic-bezier(0, 0, 0, 0.98);
   }
 
+  h1.text_header {
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
   @media only screen and (max-width: 920px) {
     .category {
       width: 500px !important;
@@ -216,6 +238,12 @@
       background-size: cover !important;
       margin: 20px auto;
       padding-bottom: 37px;
+      background: #f8f9f7;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #8080800d;
+      font-family: -webkit-pictograph;
     }
   }
 </style>

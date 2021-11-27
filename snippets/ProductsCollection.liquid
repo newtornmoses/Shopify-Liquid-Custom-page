@@ -36,7 +36,7 @@
   </div>
 </div>
 
-<!-- Natural-products -->
+{% comment %} <!-- Natural-products -->
 <div class="products_collection">
   <div class="collection_title_div">
     <span class="bar"></span>
@@ -52,7 +52,7 @@
     {% for product in collections['Natural-products'].products %}
 
     <div class="product">
-      <a href="{{" product.url}} class="product__link">
+      <a href="{{ product.url}}" class="product__link">
         <img src={{ product.images[0] | img_url: "medium" }} alt={{
           product.title
         }}
@@ -63,7 +63,7 @@
       <div class="addtoCart_container">
         <!-- <form action="/cart/add" method="post" id="product-form-{{ product.id }}">   
   <input type="hidden" name="id" value="{{ product.variants.first.id }}"> -->
-        <a href="{{" product.url}} class="product__link">
+        <a href="{{product.url}}" class="product__link">
           <button class="addTocart">View Item</button>
         </a>
         <!-- </form> -->
@@ -72,7 +72,7 @@
 
     {% endfor %}
   </div>
-</div>
+</div> {% endcomment %}
 
 <!-- all-products -->
 <div class="products_collection">

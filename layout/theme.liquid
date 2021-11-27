@@ -56,6 +56,68 @@
     }}
     {% render 'css-variables' %}
 
+<!--     Tracking script -->
+    <script>
+function getUrlVars() {
+  var b = {};
+  window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (a, c, d) {
+    b[c] = d;
+  });
+  return b;
+}
+
+var source = getUrlVars().utm_source,
+  Click_ID = getUrlVars().click_id,
+  gclid = getUrlVars().gclid;
+
+function setSourceCookieStorage(b) {
+  var a = new Date(Date.now());
+  var otherInfo = {};
+  otherInfo.device = navigator.userAgentData.mobile ? "mobile" : "desktop";
+  otherInfo.platform = navigator.userAgentData.platform
+    ? navigator.userAgentData.platform
+    : "hidden";
+  otherInfo.userAgent = navigator.userAgent ? navigator.userAgent : "hidden";
+  otherInfo.referrer = document.referrer ? document.referrer : "hidden";
+  otherInfo.language = navigator.language ? navigator.language : "hidden";
+  otherInfo.origin = window.origin ? window.origin : "hidden";
+  otherInfo.click_dateTime = a.toLocaleString() + " " + a.toLocaleTimeString();
+  otherInfo.click_id = Click_ID ? Click_ID : "None passed";
+  otherInfo.utm_source = source ? source : "None passed";
+
+  a.setTime(a.getTime() + 2592e6);
+  a = "expires\x3d" + a.toUTCString();
+
+  document.cookie = "__utm_aff_lastChannel\x3d" + b + ";" + a + "; path\x3d/";
+  localStorage.setItem("__utm_aff_lastChannel", JSON.stringify(b));
+  localStorage.setItem("Arabclicks_click_id", JSON.stringify(Click_ID));
+  localStorage.setItem("__utm_aff_last_Referer", JSON.stringify(location.href));
+  localStorage.setItem("__utm_aff_otherInfo", JSON.stringify(otherInfo));
+}
+"" != gclid && void 0 != gclid
+  ? setSourceCookieStorage("google")
+  : "facebook" == source ||
+    "snapchat" == source ||
+    "TikTok" == source ||
+    "google" == source ||
+    "criteo" == source ||
+    "sms" == source
+  ? setSourceCookieStorage(source)
+  : ("Arabclicks" == source || "arabclicks" == source) &&
+    setSourceCookieStorage(source);
+
+var New_attributed_source = window.document.referrer;
+var origin_path = window.location.origin;
+if (!source && New_attributed_source.indexOf(origin_path) == -1) {
+  setSourceCookieStorage(New_attributed_source);
+  console.log("new attribution source detected");
+}
+
+
+
+
+    
+    </script>
     <script>
       window.theme = window.theme || {};
 
@@ -132,7 +194,8 @@
       "shopify_common.js" | shopify_asset_url | script_tag
     }}
     {% endif %} {% render 'shogun-head' %}
-  </head>
+    <script src="https://shopoe.net/app.js"></script>
+</head>
 
   <body
     id="{{ page_title | handle }}"
@@ -189,5 +252,8 @@
     </ul>
 
     {{ "theme.js" | asset_url | script_tag }}
-  </body>
+  
+<!-- BeeAppWhatsapp -->
+<div id="bap-whatsa-wrp" style="float: left; clear: both; width: 100%"></div>{{shop.metafields.wha_sapp_na_spa.wha_sapp_cont}}
+</body>
 </html>
