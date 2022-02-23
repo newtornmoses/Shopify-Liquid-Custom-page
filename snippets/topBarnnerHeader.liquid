@@ -67,6 +67,51 @@
   <div class="cart"></div>
 </div>
 
+ {% if template == 'index' %}
+<div class="top_deals">
+  <!-- Natural-products -->
+<div class="products_collection">
+  <div class="collection_title_div">
+    <span class="bar"></span>
+
+    <div class="title">
+      <h1 class="collection__title">
+        <span class="collection_text_span">TODAY’S </span> BESTSELLERS
+      </h1>
+    </div>
+    <span class="bar"></span>
+  </div>
+  <div class="product_collection__wrapper">
+    {% for product in collections['Natural-products'].products %}
+
+    <div class="product">
+      <a href="{{ product.url}}" class="product__link">
+        <img src={{ product.images[0] | img_url: "medium" }} alt={{
+          product.title
+        }}
+        class="product_img">
+      </a>
+      <p class="product_title">{{ product.title }}</p>
+      <p class="product_price">{{ product.price | money }}</p>
+      <div class="addtoCart_container">
+        <!-- <form action="/cart/add" method="post" id="product-form-{{ product.id }}">   
+  <input type="hidden" name="id" value="{{ product.variants.first.id }}"> -->
+        <a href="{{product.url}}" class="product__link">
+          <button class="addTocart">View Item</button>
+        </a>
+        <!-- </form> -->
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div> 
+
+</div>
+
+<hr>
+{% endif %}
+
 
 
 <style>
